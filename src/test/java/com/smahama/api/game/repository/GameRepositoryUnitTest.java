@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
 
 import java.util.Collections;
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -13,6 +14,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import com.smahama.api.game.model.Card;
 import com.smahama.api.game.model.Deck;
 import com.smahama.api.game.model.Player;
 
@@ -32,6 +34,9 @@ public class GameRepositoryUnitTest {
     @Mock
     private Player player;
 
+    @Mock
+    private Card card;
+
     public GameRepositoryUnitTest() {
 
         //
@@ -48,7 +53,7 @@ public class GameRepositoryUnitTest {
         assertNotNull(game.getGameId());
         assertNotNull(game.getShoe());
         assertEquals(GAME_NAME, game.getGameName());
-        assertEquals(Collections.emptyList(), game.getShoe().getDecks());
+        assertEquals(Collections.emptyList(), game.getShoe().getCards());
 
         final var games = this.gameRepository.getAllGames();
         assertEquals(games.get(0), game);
@@ -86,14 +91,14 @@ public class GameRepositoryUnitTest {
 
         // given
         final var game = this.gameRepository.createGame(GAME_NAME);
-
+        when(this.deck.getCards()).thenReturn(List.of(this.card));
         // when
         this.gameRepository.addDeck(game, this.deck);
 
         // then
         final var shoe = game.getShoe();
-        assertEquals(1, shoe.getDecks().size());
-        assertTrue(shoe.getDecks().contains(this.deck));
+        assertEquals(1, shoe.getCards().size());
+        assertEquals(this.card, shoe.getCards().get(0));
     }
 
     @Test

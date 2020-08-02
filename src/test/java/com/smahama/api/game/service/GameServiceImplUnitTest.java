@@ -12,7 +12,6 @@ import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
@@ -94,9 +93,7 @@ public class GameServiceImplUnitTest {
         throws GameNotFoundException {
 
         // given
-        when(this.shoe.getDecks()).thenReturn(List.of(this.deck));
         when(this.game.getGameId()).thenReturn(GAME_ID);
-        when(this.game.getShoe()).thenReturn(this.shoe);
 
         when(this.gameRepository.getGame(anyInt())).thenReturn(Optional.of(this.game));
 
@@ -105,7 +102,6 @@ public class GameServiceImplUnitTest {
 
         // then
         verify(this.gameRepository).getGame(eq(GAME_ID));
-        verify(this.deckRepository).deleteDeck(eq(this.deck));
         verify(this.gameRepository).deleteGame(eq(GAME_ID));
     }
 

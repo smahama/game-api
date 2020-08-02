@@ -65,7 +65,6 @@ public class GameServiceImpl
         throws GameNotFoundException {
 
         final var game = this.gameRepository.getGame(gameId).orElseThrow(() -> new GameNotFoundException(gameId));
-        game.getShoe().getDecks().stream().forEach(deck -> this.deckRepository.deleteDeck(deck));
         game.getPlayers().stream().forEach(player -> this.playerRepository.deletePlayer(player));
         this.gameRepository.deleteGame(game.getGameId());
     }

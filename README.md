@@ -57,7 +57,6 @@ response
 {   "gameId": 2,
     "gameName": "tartampiom",
     "shoe": {
-        "decks": [],
         "cards": []
     },
     "players": []
@@ -92,35 +91,6 @@ response
     "gameId": 1,
     "gameName": "game uno",
     "shoe": {
-        "decks": [
-            {
-                "deckId": 1,
-                "deckName": "deck uno",
-                "cards": [
-                    {
-                        "cardId": 1,
-                        "suit": "CLUBS",
-                        "rank": "ACE"
-                    },
-                    {
-                        "cardId": 2,
-                        "suit": "CLUBS",
-                        "rank": "TWO"
-                    },
-                    {
-                        "cardId": 3,
-                        "suit": "CLUBS",
-                        "rank": "THREE"
-                    },
-                    ...
-                    {
-                        "cardId": 52,
-                        "suit": "SPADES",
-                        "rank": "KING"
-                    }
-                ]
-            }
-        ],
         "cards": [
             {
                 "cardId": 1,
@@ -159,35 +129,6 @@ response
     "gameId": 1,
     "gameName": "game uno",
     "shoe": {
-        "decks": [
-            {
-                "deckId": 1,
-                "deckName": "deck uno",
-                "cards": [
-                    {
-                        "cardId": 1,
-                        "suit": "CLUBS",
-                        "rank": "ACE"
-                    },
-                    {
-                        "cardId": 2,
-                        "suit": "CLUBS",
-                        "rank": "TWO"
-                    },
-                    {
-                        "cardId": 3,
-                        "suit": "CLUBS",
-                        "rank": "THREE"
-                    },
-                    ...
-                    {
-                        "cardId": 52,
-                        "suit": "SPADES",
-                        "rank": "KING"
-                    }
-                ]
-            }
-        ],
         "cards": [
             {
                 "cardId": 1,
