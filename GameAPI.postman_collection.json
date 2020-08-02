@@ -1,0 +1,195 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Game-API",
+		"_postman_id": "e0737abb-18a8-5224-f2da-930c80907edb",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create game",
+			"request": {
+				"url": "http://localhost:8080/api/v1/games",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"gameName\" : \"world tour\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "add deck to game",
+			"request": {
+				"url": "http://localhost:8080/api/v1/games/1/decks",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"deckName\":\"deck juno\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "add player to game",
+			"request": {
+				"url": "http://localhost:8080/api/v1/games/1/players",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"playerName\":\"Ramon\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "deal card to player",
+			"request": {
+				"url": "http://localhost:8080/api/v1/games/1/players/1/cards",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "shuffle",
+			"request": {
+				"url": "http://localhost:8080/api/v1/games/1/shuffle",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "list player cards",
+			"request": {
+				"url": "http://localhost:8080/api/v1/games/1/players/1/cards",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "list all players",
+			"request": {
+				"url": "http://localhost:8080/api/v1/games/1/players",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "list cards per suit",
+			"request": {
+				"url": "http://localhost:8080/api/v1/games/1/suits",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "list remaining cards",
+			"request": {
+				"url": "http://localhost:8080/api/v1/games/1/suits",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "remove player from game",
+			"request": {
+				"url": "http://localhost:8080/api/v1/games/1/players/1",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "delete game",
+			"request": {
+				"url": "http://localhost:8080/api/v1/games/1",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
